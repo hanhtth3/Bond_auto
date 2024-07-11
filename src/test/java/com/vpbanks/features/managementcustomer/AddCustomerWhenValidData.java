@@ -42,6 +42,7 @@ public class AddCustomerWhenValidData {
                 Click.on(Elements.IMG_BUTTON),
                 Click.on(Elements.BOND_MENU),
                 Click.on(Elements.CUSTOMER_MENU),*/
+                WaitUntil.the(Elements.ADDCUSTOMER_BUTTON, isClickable()).forNoMoreThan(Duration.ofSeconds(30)),
                 Click.on(Elements.ADDCUSTOMER_BUTTON)
 
         );
