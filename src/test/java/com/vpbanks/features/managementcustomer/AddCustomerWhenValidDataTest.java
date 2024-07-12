@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import com.vpbanks.tasks.Login;
 
 @RunWith(SerenityRunner.class)
-public class AddCustomerWhenValidData {
+public class AddCustomerWhenValidDataTest {
 
     Actor hanh = Actor.named("Hanh");
 
@@ -34,14 +34,14 @@ public class AddCustomerWhenValidData {
 
         hanh.wasAbleTo(
                 Open.url(Elements.URL),
-               /* Enter.theValue("hanhtth@vpbanks.com.vn").into(Elements.USERNAME_FIELD),
+                Enter.theValue("hanhtth@vpbanks.com.vn").into(Elements.USERNAME_FIELD),
                 Enter.theValue("Kofax@07").into(Elements.PASSWORD_FIELD),
                 Click.on(Elements.PASSWORD_FIELD),
                 Click.on(Elements.SUBMIT_BUTTON),
                 Click.on(Elements.SCROLL_MENU),
                 Click.on(Elements.IMG_BUTTON),
                 Click.on(Elements.BOND_MENU),
-                Click.on(Elements.CUSTOMER_MENU),*/
+                Click.on(Elements.CUSTOMER_MENU),
                 Click.on(Elements.ADDCUSTOMER_BUTTON)
 
         );
