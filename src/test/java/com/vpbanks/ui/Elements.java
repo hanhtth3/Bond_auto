@@ -32,11 +32,22 @@ public class Elements {
             Target.the("menu Scroll")
                     .locatedBy("//div[@class='scrollbar-container main-menu-content ps']");
 
-    public static final Target IMG_BUTTON =
-            Target.the("img button")
-                    .locatedBy("//a[@class='navbar-brand active']");
+    public static final Target BOND_HIDEMENU =
+            Target.the("Menu")
+                   .locatedBy("//a[@class='nav-menu-main menu-toggle hidden-xs is-active nav-link']");
 
-    //public static final Target ACCOUNT_NO =
-            //Target.the("acount number")
-                    //.locate(By.id("accountNo"));
+    public static final Target ACCOUNT_NO =
+            Target.the("Số tài khoản")
+                    .located(By.id("accountNo"));
+
+    public static final Target SEARCH_BUTTON =
+            Target.the("Search button")
+                    .locatedBy("//button[@class='ant-btn ant-btn-primary ant-btn-lg']");
+
+    public static final Target CUSTOMER_INPUT = Target.the("{0} input")
+            .locatedBy("//label[@title='{0}']/parent::div/following-sibling::div//input");
+
+    public static final Target CUSTOMER_FULLNAME = CUSTOMER_INPUT.of("Họ tên");
+    public static final Target CUSTOMER_EMAIL = CUSTOMER_INPUT.of("Email");
+
 }
