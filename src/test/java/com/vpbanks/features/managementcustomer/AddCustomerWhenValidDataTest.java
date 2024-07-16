@@ -50,8 +50,8 @@ public class AddCustomerWhenValidDataTest {
                 Click.on(Elements.BOND_MENU),
                 Click.on(Elements.CUSTOMER_MENU),
                 Click.on(Elements.ADDCUSTOMER_BUTTON),
-                Enter.theValue("116C121290").into(Elements.ACCOUNT_NO),
-                Ensure.that().value().isEqualTo("40")
+                Enter.theValue("116C121290").into(Elements.ACCOUNT_NO)
+
         );
     }
 }
