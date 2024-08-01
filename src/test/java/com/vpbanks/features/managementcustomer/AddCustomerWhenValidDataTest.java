@@ -9,6 +9,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.SilentTask;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.targets.EnsureFieldVisible;
 import org.htmlunit.javascript.host.event.MouseScrollEvent;
 import org.junit.Before;
@@ -20,6 +22,7 @@ import com.vpbanks.tasks.Login;
 import org.htmlunit.javascript.host.event.MouseScrollEvent;
 import java.time.Duration;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
+
 
 
 @RunWith(SerenityRunner.class)
@@ -41,7 +44,7 @@ public class AddCustomerWhenValidDataTest {
         hanh.wasAbleTo(
                 Open.url(Elements.URL),
                 Enter.theValue("hanhtth@vpbanks.com.vn").into(Elements.USERNAME_FIELD),
-                Enter.theValue("Kofax@07").into(Elements.PASSWORD_FIELD),
+                Enter.theValue("Kofax@08").into(Elements.PASSWORD_FIELD),
                 Click.on(Elements.PASSWORD_FIELD),
                 Click.on(Elements.SUBMIT_BUTTON),
                 Click.on(Elements.BOND_HIDEMENU),
@@ -50,8 +53,35 @@ public class AddCustomerWhenValidDataTest {
                 Click.on(Elements.BOND_MENU),
                 Click.on(Elements.CUSTOMER_MENU),
                 Click.on(Elements.ADDCUSTOMER_BUTTON),
-                Enter.theValue("116C121290").into(Elements.ACCOUNT_NO)
+                Enter.theValue("116C121290").into(Elements.ACCOUNT_NO),
+                Click.on(Elements.SEARCH_BUTTON),
+                //WaitUntil.the(Elements.CUSTOMER_ISPRO, isClickable()).forNoMoreThan(Duration.ofSeconds(50)),
+                SetCheckbox.of(Elements.CUSTOMER_ISPRO).toTrue(),
+                //Click.on(Elements.CUSTOMER_PROBY),
 
+            //----------------------------------------------------------------------------------------------------------
+                Ensure.that(Elements.CUSTOMER_FULLNAME).value().isEqualTo("NGUYEN THI TRANG ABC"),
+                Ensure.that(Elements.CUSTOMER_GENDER).value().isEqualTo("Nữ"),
+                Ensure.that(Elements.CUSTOMER_CODE).value().isEqualTo("0001012075"),
+                Ensure.that(Elements.CUSTOMER_ADDRESS).value().isEqualTo("VPBS MASK ADDR 987654321"),
+                Ensure.that(Elements.CUSTOMER_ADDRESSCONTACT).value().isEqualTo("VPBS MASK ADDR 987654321"),
+                Ensure.that(Elements.CUSTOMER_FAX).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_ADDRESSTAX).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_EMAIL).value().isEqualTo("trangnt@vpbanks.com.vn12"),
+                Ensure.that(Elements.CUSTOMER_TAXCODE).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_MOBILEPHONE).value().isEqualTo("0973726079"),
+                Ensure.that(Elements.CUSTOMER_PHONE).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_ID).value().isEqualTo("001190044417"),
+                Ensure.that(Elements.CUSTOMER_JOB).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_WORKPLACE).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_IDPLACE).value().isEqualTo("Cục QL xuất nhập cảnh"),
+                Ensure.that(Elements.CUSTOMER_AMOUNT).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_ATHORFULLNAME).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_ATHORADDRESS).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_ATHORID).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_ATHORIDPLACE).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_ATHORDOCNUMBER).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_PROBY).value().isEqualTo("Nhà đầu tư chiến lược")
         );
     }
 }
