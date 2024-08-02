@@ -158,7 +158,7 @@ public class Elements {
 
     public static final Target CUSTOMER_PROBY=
             Target.the("NDTCN do")
-                    .located(By.id("proInvestorBy"));
+                    .locatedBy("//div[@class='ant-select-selector']//span[@class='ant-select-selection-search']//input[@id='proInvestorBy']");
 
     public static final Target CUSTOMER_PROBYVALUE=
             Target.the("Nhà đầu tư chuyên nghiệp")

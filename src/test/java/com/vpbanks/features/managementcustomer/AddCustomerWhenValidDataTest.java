@@ -57,6 +57,7 @@ public class AddCustomerWhenValidDataTest {
                 Click.on(Elements.SEARCH_BUTTON),
                 //WaitUntil.the(Elements.CUSTOMER_ISPRO, isClickable()).forNoMoreThan(Duration.ofSeconds(50)),
                 SetCheckbox.of(Elements.CUSTOMER_ISPRO).toTrue(),
+                WaitUntil.the(Elements.CUSTOMER_PROBY, isClickable()).forNoMoreThan(Duration.ofSeconds(50)),
                 Click.on(Elements.CUSTOMER_PROBY),
 
             //----------------------------------------------------------------------------------------------------------
