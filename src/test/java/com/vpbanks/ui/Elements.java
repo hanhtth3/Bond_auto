@@ -100,6 +100,10 @@ public class Elements {
             Target.the("Quốc tịch")
                     .located(By.id("nationality"));
 
+    public static final Target CUSTOMER_OTHERNATIONALITY=
+            Target.the("Quốc tịch khác")
+                    .located(By.id("otherNationality"));
+
     public static final Target CUSTOMER_IDTYPE=
             Target.the("Loại giấy tờ")
                     .located(By.id("idType"));
@@ -153,9 +157,12 @@ public class Elements {
                     .locatedBy("//div[@id='isProfessionalInvestor']//span[@class='ant-radio ant-radio-checked']//input");
 
     public static final Target CUSTOMER_PROBY=
-            Target.the("Nhà đầu tư chuyên nghiệp do")
-                    .locatedBy("//div[@class='ant-select ant-select-in-form-item ant-select-status-error ant-select-single ant-select-show-arrow']//input[@id='proInvestorBy']");
+            Target.the("NDTCN do")
+                    .located(By.id("proInvestorBy"));
 
+    public static final Target CUSTOMER_PROBYVALUE=
+            Target.the("Nhà đầu tư chuyên nghiệp")
+                    .located(By.id("proInvestorBy"));
 
     public static final Target CUSTOMER_PRO=
             Target.the("Nhà đầu tư chiến lược")
