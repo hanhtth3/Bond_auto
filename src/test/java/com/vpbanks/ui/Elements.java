@@ -154,15 +154,15 @@ public class Elements {
 
     public static final Target CUSTOMER_ISPRO=
             Target.the("Nhà đầu tư chuyên nghiệp")
-                    .locatedBy("//div[@id='isProfessionalInvestor']//span[@class='ant-radio ant-radio-checked']//input");
+                    .locatedBy("//div[@id='isProfessionalInvestor']//input[@value='true']");
 
     public static final Target CUSTOMER_PROBY=
             Target.the("NDTCN do")
-                    .locatedBy("//div[@class='ant-select-selector']//span[@class='ant-select-selection-search']//input[@id='proInvestorBy']");
+                    .locatedBy("//input[@id='proInvestorBy']");
 
     public static final Target CUSTOMER_PROBYVALUE=
             Target.the("Nhà đầu tư chuyên nghiệp")
-                    .located(By.id("proInvestorBy"));
+                    .locatedBy("//div[@title='Nhà đầu tư chiến lược']//div[@class='ant-select-item-option-content']");
 
     public static final Target CUSTOMER_PRO=
             Target.the("Nhà đầu tư chiến lược")

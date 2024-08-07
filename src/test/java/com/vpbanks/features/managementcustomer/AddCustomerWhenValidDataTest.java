@@ -9,9 +9,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.SilentTask;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.actions.selectactions.SelectByValueFromElement;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.targets.EnsureFieldVisible;
+import net.serenitybdd.screenplay.ui.Select;
 import org.htmlunit.javascript.host.event.MouseScrollEvent;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,9 +58,9 @@ public class AddCustomerWhenValidDataTest {
                 Enter.theValue("116C121290").into(Elements.ACCOUNT_NO),
                 Click.on(Elements.SEARCH_BUTTON),
                 //WaitUntil.the(Elements.CUSTOMER_ISPRO, isClickable()).forNoMoreThan(Duration.ofSeconds(50)),
-                SetCheckbox.of(Elements.CUSTOMER_ISPRO).toTrue(),
-                WaitUntil.the(Elements.CUSTOMER_PROBY, isClickable()).forNoMoreThan(Duration.ofSeconds(50)),
-                Click.on(Elements.CUSTOMER_PROBY),
+                 Click.on(Elements.CUSTOMER_ISPRO),
+                 Click.on(Elements.CUSTOMER_PROBY),
+                 Click.on(Elements.CUSTOMER_PROBYVALUE),
 
             //----------------------------------------------------------------------------------------------------------
                 Ensure.that(Elements.CUSTOMER_FULLNAME).value().isEqualTo("NGUYỄN THỊ TRANG"),
@@ -83,8 +85,8 @@ public class AddCustomerWhenValidDataTest {
                 Ensure.that(Elements.CUSTOMER_ATHORADDRESS).value().isBlank(),
                 Ensure.that(Elements.CUSTOMER_ATHORID).value().isBlank(),
                 Ensure.that(Elements.CUSTOMER_ATHORIDPLACE).value().isBlank(),
-                Ensure.that(Elements.CUSTOMER_ATHORDOCNUMBER).value().isBlank()
-               // Ensure.that(Elements.CUSTOMER_PROBY).value().isEqualTo("Nhà đầu tư chiến lược")
+                Ensure.that(Elements.CUSTOMER_ATHORDOCNUMBER).value().isBlank(),
+                Ensure.that(Elements.CUSTOMER_ATHOREXPIRED).value().isBlank()
         );
     }
 }
