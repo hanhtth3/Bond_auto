@@ -58,9 +58,11 @@ public class AddCustomerWhenValidDataTest {
                 Enter.theValue("116C121290").into(Elements.ACCOUNT_NO),
                 Click.on(Elements.SEARCH_BUTTON),
                 //WaitUntil.the(Elements.CUSTOMER_ISPRO, isClickable()).forNoMoreThan(Duration.ofSeconds(50)),
-                 Click.on(Elements.CUSTOMER_ISPRO),
+                //ScrollToTarget(Elements.CUSTOMER_ISPRO),
+                 Click.on(Elements.CUSTOMER_ATHOREXPIRED),
                  Click.on(Elements.CUSTOMER_PROBY),
                  Click.on(Elements.CUSTOMER_PROBYVALUE),
+
 
             //----------------------------------------------------------------------------------------------------------
                 Ensure.that(Elements.CUSTOMER_FULLNAME).value().isEqualTo("NGUYỄN THỊ TRANG"),
