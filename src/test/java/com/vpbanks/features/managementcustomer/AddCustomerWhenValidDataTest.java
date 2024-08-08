@@ -58,10 +58,13 @@ public class AddCustomerWhenValidDataTest {
                 Enter.theValue("116C121290").into(Elements.ACCOUNT_NO),
                 Click.on(Elements.SEARCH_BUTTON),
                 //WaitUntil.the(Elements.CUSTOMER_ISPRO, isClickable()).forNoMoreThan(Duration.ofSeconds(50)),
-                //ScrollToTarget(Elements.CUSTOMER_ISPRO),
-                 Click.on(Elements.CUSTOMER_ATHOREXPIRED),
+                //Scroll.to(Elements.CUSTOMER_ATHORISEXPRIDED),
+                 Click.on(Elements.CUSTOMER_ISPRO),
                  Click.on(Elements.CUSTOMER_PROBY),
                  Click.on(Elements.CUSTOMER_PROBYVALUE),
+                 Enter.theValue("555").into(Elements.CUSTOMER_HOLDERNO),
+                Enter.theValue("07/08/2024").into(Elements.CUSTOMER_EFFECTIVEDATE),
+                Enter.theValue("07/08/2025").into(Elements.CUSTOMER_EXPIRATIONDATE),
 
 
             //----------------------------------------------------------------------------------------------------------
@@ -88,7 +91,7 @@ public class AddCustomerWhenValidDataTest {
                 Ensure.that(Elements.CUSTOMER_ATHORID).value().isBlank(),
                 Ensure.that(Elements.CUSTOMER_ATHORIDPLACE).value().isBlank(),
                 Ensure.that(Elements.CUSTOMER_ATHORDOCNUMBER).value().isBlank(),
-                Ensure.that(Elements.CUSTOMER_ATHOREXPIRED).value().isBlank()
+                Ensure.that(Elements.CUSTOMER_ATHORISEXPRIDED).value().isBlank()
         );
     }
 }

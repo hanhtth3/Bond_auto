@@ -168,6 +168,17 @@ public class Elements {
             Target.the("Nhà đầu tư chiến lược")
                     .locatedBy("//div[text()='Nhà đầu tư chiến lược']");
 
+    public static final Target CUSTOMER_HOLDERNO=
+            Target.the("Nghị quyết đại hội cổ đông số")
+                    .located(By.id("proResolutionMeetingShareholdersNo"));
+
+    public static final Target CUSTOMER_EFFECTIVEDATE=
+            Target.the("Ngày hiệu lực")
+                    .located(By.id("proEffectiveDate"));
+
+    public static final Target CUSTOMER_EXPIRATIONDATE=
+            Target.the("Ngày hết hạn")
+                    .located(By.id("proExpirationDate"));
 
 
     }
