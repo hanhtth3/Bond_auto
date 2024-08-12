@@ -180,6 +180,10 @@ public class Elements {
             Target.the("Ngày hết hạn")
                     .located(By.id("proExpirationDate"));
 
+    public static final Target BUTTON_END=
+            Target.the("Hoàn thành")
+                    .locatedBy("//span[text()='Hoàn thành']");
+
 
     }
 

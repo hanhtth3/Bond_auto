@@ -24,7 +24,7 @@ import com.vpbanks.tasks.Login;
 import org.htmlunit.javascript.host.event.MouseScrollEvent;
 import java.time.Duration;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-
+import com.vpbanks.tasks.TypeInto,
 
 
 @RunWith(SerenityRunner.class)
@@ -58,18 +58,18 @@ public class AddCustomerWhenValidDataTest {
                 Enter.theValue("116C121290").into(Elements.ACCOUNT_NO),
                 Click.on(Elements.SEARCH_BUTTON),
                 //WaitUntil.the(Elements.CUSTOMER_ISPRO, isClickable()).forNoMoreThan(Duration.ofSeconds(50)),
-                //Scroll.to(Elements.CUSTOMER_ATHORISEXPRIDED),
-                 Click.on(Elements.CUSTOMER_ISPRO),
-                 Click.on(Elements.CUSTOMER_PROBY),
-                 Click.on(Elements.CUSTOMER_PROBYVALUE),
-                 Enter.theValue("555").into(Elements.CUSTOMER_HOLDERNO),
-                Enter.theValue("07/08/2024").into(Elements.CUSTOMER_EFFECTIVEDATE),
-                Enter.theValue("07/08/2025").into(Elements.CUSTOMER_EXPIRATIONDATE),
+                Click.on(Elements.CUSTOMER_ISPRO),
+                Click.on(Elements.CUSTOMER_PROBY),
+                Click.on(Elements.CUSTOMER_PROBYVALUE),
+                Click.on(Elements.CUSTOMER_EFFECTIVEDATE),
+                TypeInto("12/08/2024"),
+                //Enter.theValue("07/08/2024").into(Elements.CUSTOMER_EFFECTIVEDATE),
+                //Enter.theValue("07/08/2025").into(Elements.CUSTOMER_EXPIRATIONDATE),
 
 
             //----------------------------------------------------------------------------------------------------------
                 Ensure.that(Elements.CUSTOMER_FULLNAME).value().isEqualTo("NGUYỄN THỊ TRANG"),
-                //Ensure.that(Elements.CUSTOMER_GENDER).value().isEqualTo("Nam"),
+                Ensure.that(Elements.CUSTOMER_GENDER).value().isEqualTo("Nam"),
                 Ensure.that(Elements.CUSTOMER_CODE).value().isEqualTo("0001012075"),
                 Ensure.that(Elements.CUSTOMER_ADDRESS).value().isEqualTo("VPBS MASK ADDR 9876543218909"),
                 Ensure.that(Elements.CUSTOMER_ADDRESSCONTACT).value().isEqualTo("VPBS MASK ADDR 987654321678"),
@@ -91,7 +91,8 @@ public class AddCustomerWhenValidDataTest {
                 Ensure.that(Elements.CUSTOMER_ATHORID).value().isBlank(),
                 Ensure.that(Elements.CUSTOMER_ATHORIDPLACE).value().isBlank(),
                 Ensure.that(Elements.CUSTOMER_ATHORDOCNUMBER).value().isBlank(),
-                Ensure.that(Elements.CUSTOMER_ATHORISEXPRIDED).value().isBlank()
+                Ensure.that(Elements.CUSTOMER_ATHORISEXPRIDED).value().isBlank(),
+                Scroll.to(Elements.BUTTON_END)
         );
     }
 }
