@@ -10,7 +10,7 @@ public class TypeInto {
             BrowseTheWeb.as(actor).withAction()
                     .sendKeys(value).release().perform();
         }
-        )
+        );
 
     }
 }
