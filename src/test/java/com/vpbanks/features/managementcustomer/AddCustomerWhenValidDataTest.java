@@ -24,7 +24,7 @@ import com.vpbanks.tasks.Login;
 import org.htmlunit.javascript.host.event.MouseScrollEvent;
 import java.time.Duration;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
-import com.vpbanks.tasks.TypeInto,
+import com.vpbanks.tasks.TypeInto;
 
 
 @RunWith(SerenityRunner.class)
@@ -58,14 +58,16 @@ public class AddCustomerWhenValidDataTest {
                 Enter.theValue("116C121290").into(Elements.ACCOUNT_NO),
                 Click.on(Elements.SEARCH_BUTTON),
                 //WaitUntil.the(Elements.CUSTOMER_ISPRO, isClickable()).forNoMoreThan(Duration.ofSeconds(50)),
+                Scroll.to(Elements.CUSTOMER_ATHORISEXPRIDED),
                 Click.on(Elements.CUSTOMER_ISPRO),
                 Click.on(Elements.CUSTOMER_PROBY),
                 Click.on(Elements.CUSTOMER_PROBYVALUE),
+                Enter.theValue("456").into(Elements.CUSTOMER_HOLDERNO),
                 Click.on(Elements.CUSTOMER_EFFECTIVEDATE),
-                TypeInto("12/08/2024"),
-                //Enter.theValue("07/08/2024").into(Elements.CUSTOMER_EFFECTIVEDATE),
+                TypeInto.theValue("12/08/2024"),
+                Click.on(Elements.CUSTOMER_EXPIRATIONDATE),
+                TypeInto.theValue("12/08/2025"),
                 //Enter.theValue("07/08/2025").into(Elements.CUSTOMER_EXPIRATIONDATE),
-
 
             //----------------------------------------------------------------------------------------------------------
                 Ensure.that(Elements.CUSTOMER_FULLNAME).value().isEqualTo("NGUYỄN THỊ TRANG"),
